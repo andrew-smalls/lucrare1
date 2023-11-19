@@ -1,0 +1,381 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <!--Antet start-->
+    <p style="position: absolute; top: 0; left: 3em; color: black">
+      Eng. Andrei-Mihai Micu, 2023;<br />
+      Facultatea de Automatică și Calculatoare<br />
+      Universitatea Politehnică Timișoara, România<br />
+    </p>
+    <!--Antet end-->
+    <title> </title>
+  </head>
+  <body style="max-width: 100%; overflow-x: hidden">
+    <h1 style="text-align: center; position: relative; top: 2em">
+      A comparison between latest encrypted databases:<br />
+      CryptDB, Arx, StealthDB
+    </h1>
+    <!--Introducere start-->
+    <div style="padding-left: 5em; padding-right: 5em">
+      <section>
+        <h2 style="position: relative; top: 5em; left: 5em">I. Introduction</h2>
+        <br />
+        <p style="position: relative; top: 5em">
+          &emsp;&emsp;Traditional databases store data in plaintext. This means
+          that anyone with access to such a database will be able to see the
+          data stored in the database. In the event of a database breach, the
+          intruder will have a very easy job of reading and taking all the data
+          from the breached database.<br /><br />
+          &emsp;&emsp;Database breaches have become more and more prevalent in
+          the last few years, with 614 data breaches in 2013 compared to 1802
+          data breaches in 2022 [1], with each data breach measuring millions of
+          dollars in damages to companies and governments. Besides financial
+          loss, with each data breach, private data for millions of individuals
+          is exposed, with an estimate of 422 millions people impacted in 2022
+          [1]. <br /><br />
+
+          &emsp;&emsp;To combat this and protect sensitive information from
+          unauthorized access, database providers and researchers explore
+          encrypted databases. The core idea of an encrypted database is to use
+          encryption algorithms to scramble the data before storing it. This
+          helps protect the data, because although the database gets breached,
+          the data stored inside will not be accessible unless the intruder has
+          the decryption key as well.<br />
+        </p>
+      </section>
+    </div>
+    <!--Introducere end-->
+
+    <!--Solutii start-->
+    <div style="padding-left: 5em; padding-right: 5em">
+      <section>
+        <h2 style="position: relative; top: 5em; left: 5em">
+          II. Proposed solutions
+        </h2>
+        <br />
+        <p style="position: relative; top: 5em">
+          &emsp;&emsp;For this research survey, multiple papers related to
+          encrypted databases have been considered. The papers that make the
+          study of this report were chosen because the technologies presented
+          are not purely theoretical, but have also been tested, either in a
+          controlled environment, such as the authors` computers, or in
+          combination with real commercial software for some companies.<br /><br />
+          &emsp;&emsp;Next, we will present CryptDB, Arx and StealthDB, in the
+          chronological order of their appearance in the public space.<br /><br />
+        </p>
+
+        <!--CryptDB start-->
+        <h3 style="position: relative; top: 5em; left: 5em">1. CryptDB</h3>
+        <p style="position: relative; top: 5em; left: auto">
+          &emsp;&emsp;CryptDB is a practical tool for executing standard queries
+          on encrypted data without making any changes to the DBMS. It acts as a
+          frontend for the DB with a server-side proxy that converts encrypted
+          processing into regular queries for the DB. It uses authenticated
+          details when running SQL queries, allowing the application to perform
+          queries submitted by users while guaranteeing full anonymity.<br /><br />
+        </p>
+        <div style="position: relative; top: 3.5em">
+          <img
+            src="highLevelArhicCryptDb.PNG"
+            alt="High level architecture of CryptDB"
+            style="display: block; margin-left: auto; margin-right: auto"
+          />
+          <p style="text-align: center">
+            Figure 1 - High level architecture of CryptDB [7]<br />
+          </p>
+        </div>
+        <p style="position: relative; top: 3.5em">
+          &emsp;&emsp;CryptDB is configured to work on top of MySQL databases,
+          and any interaction that can be read from the DB is hidden by
+          modifying the original schema and saving it in a proxy server. It uses
+          strong encryption methods, multiple types of queries, and is fast.
+          However, it has some limitations such as intensive computations for
+          encrypting queries, the use of multiple types of encryptions that
+          require more computing power, and occasional data leaks that may help
+          attackers understand the interface.
+        </p>
+        <div style="position: relative; top: 3.5em">
+          <img
+            src="visualRepCryptDbSampleTable.PNG"
+            alt="High level architecture of CryptDB"
+            style="display: block; margin-left: auto; margin-right: auto"
+          />
+          <p style="text-align: center">
+            Figure 2 - Visual representation of using CryptDB on a sample table
+            Employees [6]<br />
+          </p>
+        </div>
+        <p style="position: relative; top: 3.5em">
+          &emsp;&emsp;CryptDB offers a throughput loss of only 26% compared to
+          MySQL and can defend against attacks on the database server directly
+          and attacks on the whole system [2]. However, it has a transitive join
+          operator that reveals critical details about the information stored in
+          an encrypted database [3].<br /><br />
+          &emsp;&emsp;One important finding from research papers studying
+          CryptDB is that it can be integrated with other organizational
+          systems, especially ERP and management information systems, to ensure
+          the security of information queried from them [3]. However, there are
+          weak links in its layered encryption schema that need to be addressed.
+        </p>
+        <!--CryptDB end-->
+
+        <!--ARX start-->
+        <h3 style="position: relative; top: 5em; left: 5em">2. Arx</h3>
+        <p style="position: relative; top: 5em; left: auto">
+          &emsp;&emsp;ARX is a database system that encrypts data with
+          semantically secure encryption. It provides various functionalities,
+          such as equality, ranges, aggregates over ranges, order-by-limit,
+          joins, updates, and deletes. ARX is secure against snapshot attackers
+          due to its encryption schemes, and against persistent attackers, it is
+          either more secure or just as secure as PPE-based EDBs [4]. The
+          implementation of ARX is on top of MongoDB but can be used
+          elsewhere.<br /><br />
+          &emsp;&emsp;To handle different types of queries in encrypted
+          databases, ARX-Eq and ARX-Range are two different components of the
+          ARX system. ARX-Eq is a searchable encryption scheme that handles
+          equality-based queries, while ARX-Range is designed to handle
+          range-based queries. The former provides semantic security and forward
+          privacy, and the latter uses order-preserving encryption and
+          "replenishment" to periodically re-encrypt the data to mitigate
+          leakage [4]. When a query comes in, ARX directs it to the appropriate
+          component. The results are then combined and returned to the
+          client.<br /><br />
+        </p>
+        <div style="position: relative; top: 3.5em">
+          <img
+            src="highLevelArhicArxDb.PNG"
+            alt="Figure 3 - High level architecture of Arx [4]. Visual similarity with CryptDB architecture"
+            style="display: block; margin-left: auto; margin-right: auto"
+          />
+          <p style="text-align: center">
+            Figure 3 - High level architecture of Arx [4]. Visual similarity
+            with CryptDB architecture<br />
+          </p>
+        </div>
+        <p style="position: relative; top: 3.5em">
+          &emsp;&emsp;The server proxy in ARX behaves like a regular client and
+          issues normal queries to the DB, while the client proxy stores the
+          master key, rewrites queries, encrypts sensitive data, and forwards
+          encrypted queries to the proxy server for execution. By default, ARX
+          encrypts all fields in the database, but this can be controlled by the
+          admin of the DB, who can specify which field is sensitive and which is
+          not [4].<br /><br />
+          &emsp;&emsp; Some advantages of using ARX include its practicality,
+          rich functionality, and security against snapshot attackers. It is
+          also flexible in terms of what fields are encrypted and can be
+          integrated with other systems. Some disadvantages and limitations
+          include the computational cost of encrypting queries, the use of
+          multiple types of encryption, which increases computing power
+          requirements, and the fact that it can sometimes leak data.<br /><br />
+          &emsp;&emsp;Overall, ARX is a useful system for encrypted databases
+          that provides a range of functionalities while maintaining security
+          against certain types of attacks.
+        </p>
+        <!--ARX end-->
+
+        <!--StealthDB start-->
+        <h3 style="position: relative; top: 5em; left: 5em">3. StealthDB</h3>
+        <p style="position: relative; top: 5em; left: auto">
+          &emsp;&emsp;StealthDB is a new encrypted database system that uses
+          semantically secure encryption, similar to Arx, by making use of the
+          Intel Software Guard Extensions (SGX) instruction set on an Intel
+          CPU.<br /><br />
+          &emsp;&emsp;The core idea is creating a small encrypted memory
+          container, called an enclave, that can only be accessed by trusted
+          code. The enclave is “protected from untrusted applications and even
+          the system administrators, OS and hypervisor” [5].<br /><br />
+        </p>
+        <div style="position: relative; top: 3.5em">
+          <img
+            src="highLevelArhicStealthDb.PNG"
+            alt="Figure 4 - High level architecture of StealthDB [5]"
+            style="display: block; margin-left: auto; margin-right: auto"
+          />
+          <p style="text-align: center">
+            Figure 4 - High level architecture of StealthDB [5]<br />
+          </p>
+        </div>
+        <p style="position: relative; top: 3.5em">
+          &emsp;&emsp;It is designed to provide strong security, complete SQL
+          support, and scalable performance without requiring extensive changes
+          to the underlying DBMS. StealthDB is implemented as an extension on
+          top of Postgres 9.6.<br /><br />
+          &emsp;&emsp; During query execution, the client encrypts the query
+          string and sends the ciphertext to the server. We implement a query
+          parser inside an enclave, which first decrypts the ciphertext to get
+          the query and parses the query to output a version with all the
+          constants encrypted.<br /><br />
+          &emsp;&emsp;There are three possible designs for StealthDB: the first
+          design choice runs the entire DBMS inside an enclave (virtual
+          container), the second design choice only runs the query execution
+          inside an enclave, while the third design choice employs a hybrid
+          approach.<br /><br />
+          &emsp;&emsp; When a database is created, the owner specifies which
+          columns contain sensitive information and assigns them encrypted data
+          types. Data values in these columns are encrypted using AES-CTR.
+          Performance-wise, CryptDB achieves a similar throughput decrease as
+          StealthDB, but only when evaluated on small datasets [5].<br /><br />
+          &emsp;&emsp; SGX separates secure and unsecure segments of code in its
+          memory and there is a limit of 90MB of secure memory available at a
+          time. “SGX is vulnerable to memory, cache and other side-channel
+          leakages, lacks syscalls and IO support, and incurs high overheads for
+          switching between enclave and non-enclave modes, which further limit
+          the complexity and functionality of the trusted enclave code” [5].<br /><br />
+        </p>
+        <!--StealthDB end-->
+      </section>
+      <!--Solutii end-->
+
+      <!--Discussion start-->
+      <section>
+        <h2 style="position: relative; top: 5em; left: 5em">III. Discussion</h2>
+        <br />
+        <p style="position: relative; top: 5em">
+          &emsp;&emsp;The 3 presented technologies are similar in what they try
+          to achieve: encrypting data and interactions with a DBMS system.
+          However, all of these technologies work differently, therefore they
+          are suited for different use cases.<br /><br />
+          &emsp;&emsp;CryptDB was (and still is to a certain degree) a very
+          important piece of work in the encrypted databases area of study. It
+          was the first system to provide a practical and feasible application
+          when used in a real world scenario, trading a small portion of
+          security in exchange for speed comparable with the speeds of other
+          traditional DBMS.<br /><br />
+
+          &emsp;&emsp;Built as an upgrade on top of CryptDB, Arx is the newer,
+          more robust and more secure implementation of an encrypted database.
+          Arx is one of the first implementations of such kind to explore
+          semantically secure encryptions and the result is a very secure
+          database with decent performance overhead, considering the
+          computations behind the numerous encryptions applied by the system and
+          the optimizations that will drive this overhead further down.<br /><br />
+
+          &emsp;&emsp;StealthDB is the newest encrypted database of the three
+          technologies presented. It`s similar to Arx, in the sense that it also
+          makes use of semantically secure encryptions. However, StealthDB works
+          on top of Intel`s SGX software, thus being dependent on hardware. With
+          this, there also comes the hardware limitations, such as the maximum
+          secure memory in which code is allowed to run. There is the
+          possibility of this changing in the future, but it`s not a
+          guarantee.<br /><br />
+          &emsp;&emsp;Performance wise, CryptDB manages to operate at decent
+          overhead when compared to unencrypted MySQL, with a maximum of 26%
+          decrease in throughput [2]. In a different study [3], the latency and
+          throughput for a database with 1 million entries validated this
+          result: “the baseline latency was approximately double with the
+          encrypted database (36 ms vs. 19 ms), and achievable throughput was
+          about 25% (155 req/s vs. 575 req/s)” [3]. This would mean CryptDB
+          requires 4 times the amount of computational power in order to match
+          the unencrypted performance request rates.<br /><br />
+
+          &emsp;&emsp;Arx was not as studied as CryptDB, the reference numbers
+          regarding its performance come directly from the initial paper. ARX-EQ
+          produces, in some cases (many duplicates), at most 55% performance
+          penalty. However, when all fields are unique, ARX-EQ performs the
+          best, with only a 20% higher latency (1.13ms compared to MongoDB`s
+          0.94ms) [4]. According to the authors, the performance is similar to
+          CryptDB [4]. As far as storage goes, in an experiment done on
+          ShareLaTeX (application that contains documents), the storage
+          increased by 16 times in total on the DB server side (accounting for
+          encrypted data, indexes). However, Arx might consume less if used on
+          an application that does not have only documents as primary data.<br /><br />
+          &emsp;&emsp;Lastly, similar to Arx, the performance numbers for
+          StealthDB come from the initial paper only. Running tests on 2GB of
+          unencrypted data and corresponding 7GB of encrypted data yields a
+          median of 75% increased latency for the StealthDB implementation as
+          compared to simple PostgreSQL, However, taking into account the result
+          for 90% of transactions, the overhead comes down to only 22%
+          difference (7.2 milliseconds StealthDB vs 5.9 milliseconds
+          PostgreSQL).<br /><br />
+        </p>
+      </section>
+      <!--Discussion end-->
+
+      <!--Concluzii start-->
+      <section>
+        <h2 style="position: relative; top: 5em; left: 5em">IV. Conclusions</h2>
+        <br />
+        <p style="position: relative; top: 5em">
+          &emsp;&emsp;If I had to choose one of these implementations, I would
+          first need to know exactly the nature of the project in question. For
+          example, if I had to manage the data for a chain of hospitals and the
+          data measured gigabytes of sensitive information, I would choose Arx,
+          because of the security guarantees it offers, while carefully taking
+          into account the storage available. If I had to manage a web
+          application with hundreds of megabytes of sensitive information, I
+          would make use of the StealthDB implementation on top of the,
+          hopefully, existing Intel CPU in the system.<br /><br />
+          &emsp;&emsp;In my opinion, given the increasing number of data
+          breaches in the last few years and the research going into finding
+          security alternatives, such as the encrypted databases just presented,
+          I think the future holds great potential in both perfecting these
+          technologies and making them optimal for commercial use and also
+          finding new ways of protecting our data.<br /><br />
+        </p>
+      </section>
+      <!--Concluzii end-->
+
+      <!--Referinte start-->
+      <section>
+        <h2 style="position: relative; top: 5em; left: 5em">V. References</h2>
+        <br />
+        <p style="position: relative; top: 5em">
+          &emsp;&emsp; [1] - Petrosyan, A. Apr 1, 2023, “Cyber crime: number of
+          compromises and impacted individuals in U.S. 2005-2022”, Published in
+          Statista,
+          <a
+            href="https://www.statista.com/statistics/273550/data-breaches-recorded-in-the-united-states-by-number-of-breach
+         es-and-records-exposed/"
+            >URL</a
+          ><br />
+          &emsp;&emsp; [2] - Yousuf, H., Salloum, S. A., Aburayya, A., Al-Emran,
+          M., & Shaalan, K. (2021). A systematic review of CRYPTDB:
+          Implementation, challenges, and future opportunities. Journal of
+          Management Information and Decision Sciences, 24, 1-16,
+          <a
+            href="https://www.researchgate.net/profile/Said-Salloum/publication/354564629_A_systematic_review_of_CRYP
+            TDB_Implementation_challenges_and_future_opportunities/links/61405adb9f98bc6b51bf0633/A-systematic
+            -review-of-CRYPTDB-Implementation-challenges-and-future-opportunities.pdf"
+            >URL</a
+          ><br />
+          &emsp;&emsp; [3] - Foltz, K., & Simpson, W. R. (2018). Extending
+          CryptDB to Operate an ERP System on Encrypted Data. In ICEIS (1) (pp.
+          103-110),
+          <a
+            href="https://pdfs.semanticscholar.org/1f94/a8a5fa3b73ddd91b853d0443f64054842da5.pdf"
+            >URL</a
+          ><br />
+          &emsp;&emsp; [4] - Poddar, R., Boelter, T., & Popa, R. A. (2017). Arx:
+          A DBMS with Semantically Secure Encryption. Tech Report No:
+          UCB/EECS-2017-111,
+          <a
+            href="https://digitalassets.lib.berkeley.edu/techreports/ucb/text/EECS-2017-111.pdf"
+            >URL</a
+          ><br />
+          &emsp;&emsp; [5] - Vinayagamurthy, D., Gribov, A., & Gorbunov, S.
+          (2019). StealthDB: a Scalable Encrypted Database with Full SQL Query
+          Support. Proc. Priv. Enhancing Technol., 2019(3), 370-388,
+          <a href="https://petsymposium.org/popets/2019/popets-2019-0052.pdf"
+            >URL</a
+          ><br />
+          &emsp;&emsp; [6] - Akin, I. H., & Sunar, B. (2014, December). On the
+          difficulty of securing web applications using CryptDB. In 2014 IEEE
+          Fourth International Conference on Big Data and Cloud Computing (pp.
+          745-752). IEEE,
+          <a href="https://eprint.iacr.org/2015/082.pdf">URL</a><br />
+          &emsp;&emsp;[7] - Shahzad, M. F. COST & PERFORMANCE EVALUATION OF DATA
+          CONFIDENTIALITY IN HIGH THROUGPUT/CLOUD BASED MULTI-TIER APPLICATIONS,
+          <a
+            href="https://www.researchgate.net/figure/CryptDB-Architecture-9_fig2_316888740"
+            >URL</a
+          ><br />
+        </p>
+      </section>
+      <!--Referinte end-->
+    </div>
+  </body>
+</html>
