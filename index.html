@@ -1,213 +1,216 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="DESCRIPTION META TAG" />
-    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-    <meta
-      property="og:description"
-      content="SOCIAL MEDIA DESCRIPTION TAG TAG"
-    />
-    <meta property="og:url" content="URL OF THE WEBSITE" />
-    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
-    <meta
-      name="twitter:description"
-      content="TWITTER BANNER DESCRIPTION META TAG"
-    />
 
-    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="We aim to further understand the benefit of 3D vs. color in image anomaly detection. Our best model reaches SOTA (Pixel ROCAUC 99.2%, PRO 95.9% on MVTec 3D-AD)">
+    <meta property="og:title"
+        content="Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection" />
+    <meta property="og:description"
+        content="We aim to further understand the benefit of 3D vs. color in image anomaly detection. Our best model reaches SOTA (Pixel ROCAUC 99.2%, PRO 95.9% on MVTec 3D-AD)" />
+    <meta property="og:url" content="http://www.vision.huji.ac.il/3d_ads/" />
+    <meta property="og:image" content="static/image/og_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    <title>Academic Project Page</title>
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="static/css/bulma.min.css" />
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="static/css/index.css" />
+    <meta name="twitter:title"
+        content="Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection">
+    <meta name="twitter:description"
+        content="We aim to further understand the benefit of 3D vs. color in image anomaly detection. Our best model reaches SOTA (Pixel ROCAUC 99.2%, PRO 95.9% on MVTec 3D-AD)">
+    <meta name="twitter:image" content="static/images/twitter_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords"
+        content="Anomaly Detection, Anomaly Segmentation, Point Clouds, Computer Vision, Deep Learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-    <script defer src="static/js/fontawesome.all.min.js"></script>
-    <script src="static/js/bulma-carousel.min.js"></script>
-    <script src="static/js/bulma-slider.min.js"></script>
-    <script src="static/js/index.js"></script>
-  </head>
-  <body>
+
+    <title>Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
     <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">
-                Academic Project Page
-              </h1>
-              <div class="is-size-5 publication-authors">
-                <!-- Paper authors -->
-                <span class="author-block">
-                  <a href="FIRST AUTHOR PERSONAL LINK" target="_blank"
-                    >First Author</a
-                  ><sup>*</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank"
-                    >Second Author</a
-                  ><sup>*</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank"
-                    >Third Author</a
-                  >
-                </span>
-              </div>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Try<b>hard</b></h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="" target="_blank">Andrei Micu</a>,
+                        </div>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  >Institution Name<br />Conferance name and year</span
-                >
-                <span class="eql-cntrb"
-                  ><small
-                    ><br /><sup>*</sup>Indicates Equal Contribution</small
-                  ></span
-                >
-              </div>
-
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <!-- Arxiv PDF link -->
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Facultatea de Automatică și Calculatoare <br> Universitatea
+                                Politehnică Timișoara, România</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+        </div>
+        </div>
     </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="subtitle has-text-justified">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe, assumenda similique quia facere impedit
+                    fugiat dignissimos repellat dolorum odit beatae quod, et
+                    veniam natus asperiores eum nisi, temporibus voluptatibus nulla!
+                </h2>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Paper abstract -->
     <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna
-                feugiat nibh elementum, et tempor dolor mattis. Donec accumsan
-                enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex
-                eget mauris cursus euismod nec et nibh. Maecenas ac gravida
-                ante, nec cursus dui. Vivamus purus nibh, placerat ac purus
-                eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus
-                gravida commodo. Pellentesque auctor leo vitae sagittis
-                suscipit.
-              </p>
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Numquam similique nobis, recusandae dignissimos eaque aliquid
+                            sunt quod eveniet modi odio facere doloremque necessitatibus
+                            officiis qui ipsam, nulla minima delectus doloribus.
+                        </p>
+                        <p>
+                            <img src="" alt="" class="center-image blend-img-background" />
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <!-- End paper abstract -->
 
-    <!-- Image carousel -->
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
-              <h2 class="subtitle has-text-centered">
-                First image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
-              <h2 class="subtitle has-text-centered">
-                Second image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
-              <h2 class="subtitle has-text-centered">
-                Third image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
-              <h2 class="subtitle has-text-centered">
-                Fourth image description.
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End image carousel -->
 
-    <!--BibTex citation -->
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>BibTex Code Here</code></pre>
-      </div>
+
+    <section class="section is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <div class="content">
+                        <h2 class="title is-3">Sectiune 1</h2>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
+                                distinctio sed sunt ducimus placeat atque iusto tenetur,
+                                adipisci praesentium saepe, ea, quod optio neque earum odio nesciunt mollitia possimus
+                                nihil.
+                            </p>
+                        </div>
+                        <img src="" alt="" class="center-image" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!--End BibTex citation -->
+
+
+
+
+    <section class="section hero is-light">
+        <div class="container is-full is-max-desktop">
+            <div class="content ">
+                <h2 class="title is-3">Sectiune 2</h2>
+                <div class="level-set has-text-justified">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laudantium perspiciatis expedita soluta incidunt quidem,
+                    minus excepturi sint eos eaque accusamus esse deserunt tenetur reprehenderit voluptates voluptatibus
+                    dolore fuga. Molestias, in.
+                    <h2 class="has-text-centered">
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+
+                <div class="column is-full">
+                    <div class="content">
+                        <h2 class="title is-3">Sectiune 3</h2>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Nam quasi libero, dicta quisquam quam nemo inventore
+                                voluptatibus quas non nulla voluptas, in molestiae consequatur
+                                similique nisi delectus voluptatum hic aliquam!
+                            </p>
+                            <img src="" alt="Summary of our findings" class="center-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                This page was built using the
-                <a
-                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                  target="_blank"
-                  >Academic Project Page Template</a
-                >
-                which was adopted from the <a
-                  href="https://nerfies.github.io"
-                  target="_blank"
-                  >Nerfies</a
-                > project page. You are free to borrow the of this website, we
-                just ask that you link back to this page in the footer. <br />
-                This website is licensed under a
-                <a
-                  rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/"
-                  target="_blank"
-                  >Creative Commons Attribution-ShareAlike 4.0 International
-                  License</a
-                >.
-              </p>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p class="has-text-centered">
+                            This work was supported in part by Oracle Cloud credits and related resources provided by
+                            the Oracle for Research program.
+                            <br>
+                            <a href="https://www.oracle.com/research" target="_blank">
+                                https://www.oracle.com/research</a>
+                        </p>
+                        <p>
+                            <a href="https://www.oracle.com/research" target="_blank"><img src="static/images/ofr.png"
+                                    alt="Oracle for Research logo" class="center-image" /></a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
-  </body>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer. <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
